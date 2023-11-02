@@ -1,0 +1,32 @@
+{
+  "name": "binar-challenge-4-expressjs",
+  "version": "1.0.0",
+  "description": "Challenge Chapter 4 - Nodejs, Express Js, Prisma - Bootcamp Backend Binar Academy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wahyupambudi/binar-challenge-4-expressjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wahyupambudi/binar-challenge-4-expressjs/issues"
+  },
+  "homepage": "https://github.com/wahyupambudi/binar-challenge-4-expressjs#readme",
+  "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "joi": "^17.11.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.5.2"
+  }
+}
