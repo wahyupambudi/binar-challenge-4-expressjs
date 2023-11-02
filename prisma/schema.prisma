@@ -36,6 +36,8 @@ model bank_accounts {
   bank_account_number Int   @unique
   balance           Int
   user             users     @relation(fields: [userId], references: [id])
+  transactionsAsSender transaction[] @relation("SenderTransactions")
+  transactionsAsReceiver transaction[] @relation("ReceiverTransactions")
 }
 
 model transaction {
@@ -43,4 +45,6 @@ model transaction {
   source_account_id       Int
   destination_account_id  Int
   amount                  Int
+  SenderTransactions         bank_accounts   @relation("SenderTransactions", fields: [source_account_id], references: [id])
+  ReceiverTransactions    bank_accounts   @relation("ReceiverTransactions", fields: [destination_account_id], references: [id])
 }

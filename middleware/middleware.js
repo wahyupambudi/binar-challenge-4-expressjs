@@ -51,7 +51,26 @@ function CheckPostAccount(req, res, next) {
   next();
 }
 
+function CheckPostTransaction(req, res, next) {
+    const schema = Joi.object({        
+        source_account_id: Joi.number().required(),        
+        destination_account_id: Joi.number().required(),        
+        amount: Joi.number().required()
+    })
+
+    const { error } = schema.validate(req.body)
+    if (error) {
+        let respErr = ResponseTemplate(null, 'invalid request',
+            error.details[0].message, 400)
+        res.json(respErr)
+        return
+    }
+
+    next()
+}
+
 module.exports = {
   CheckPostUser,
-  CheckPostAccount
+  CheckPostAccount,
+  CheckPostTransaction
 };
