@@ -49,8 +49,8 @@ async function Get(req, res) {
   }
 
   try {
-    const page = parseInt(req.query.page) || 1; // Nomor halaman
-    const perPage = parseInt(req.query.perPage) || 10; // Jumlah item per halaman
+    const page = parseInt(req.query.page) || 1; // total halaman
+    const perPage = parseInt(req.query.perPage) || 10; // total item per halaman
     const skip = (page - 1) * perPage;
     const users = await prisma.users.findMany({
       skip,
