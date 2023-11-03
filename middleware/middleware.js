@@ -55,7 +55,27 @@ function CheckPostTransaction(req, res, next) {
     const schema = Joi.object({        
         source_account_id: Joi.number().required(),        
         destination_account_id: Joi.number().required(),        
-        amount: Joi.number().required()
+        amount: Joi.number().required(),
+        type: Joi.string().valid('Deposit', 'Withdraw', 'Transfer').required(),
+    })
+
+    const { error } = schema.validate(req.body)
+    if (error) {
+        let respErr = ResponseTemplate(null, 'invalid request',
+            error.details[0].message, 400)
+        res.json(respErr)
+        return
+    }
+
+    next()
+}
+
+function CheckPostDeposit(req, res, next) {
+    const schema = Joi.object({        
+        source_account_id: Joi.number().required(),        
+        destination_account_id: Joi.number().required(),        
+        amount: Joi.number().required(),
+        type: Joi.string().valid('Deposit', 'Withdraw', 'Transfer').required(),
     })
 
     const { error } = schema.validate(req.body)
@@ -72,5 +92,6 @@ function CheckPostTransaction(req, res, next) {
 module.exports = {
   CheckPostUser,
   CheckPostAccount,
-  CheckPostTransaction
+  CheckPostTransaction,
+  CheckPostDeposit
 };
