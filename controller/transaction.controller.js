@@ -134,7 +134,7 @@ async function Withdraw(req, res) {
       return res.status(404).json({ error: "Bank Account Not Found!." });
     }
 
-    if (amount < 0) {
+    if (amount <= 0) {
       return res.status(400).json({ error: "Not enough Amount!." });
     }
 
