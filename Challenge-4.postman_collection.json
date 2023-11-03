@@ -1,0 +1,659 @@
+{
+	"info": {
+		"_postman_id": "daeefc7f-e9d3-4529-9150-94c2b8fd2d52",
+		"name": "Challenge-4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9925590",
+		"_collection_link": "https://grey-crater-445557.postman.co/workspace/Binar-Academy~c3683265-88af-4572-8d09-375e9eba9082/collection/9925590-daeefc7f-e9d3-4529-9150-94c2b8fd2d52?action=share&source=collection_link&creator=9925590"
+	},
+	"item": [
+		{
+			"name": "chall-chapter4",
+			"item": [
+				{
+					"name": "CRUD User",
+					"item": [
+						{
+							"name": "insertUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"wahyu\",\r\n    \"email\": \"wahyu@mail.com\",\r\n    \"password\": \"123asdjhsagd\",\r\n    \"identity_type\": \"male\",\r\n    \"identity_number\": 1931,\r\n    \"address\": \"lampung\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{localhost}}/api/v1/users"
+							},
+							"response": [
+								{
+									"name": "insertUser",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"jon\",\r\n    \"email\": \"jo1n@tes.com\",\r\n    \"password\": \"test\",\r\n    \"identity_type\": \"male\",\r\n    \"identity_number\": 12312,\r\n    \"address\": \"lampung\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{localhost}}/api/v1/users"
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "getUser",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/v1/users?page=1",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "udin@tes.com",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "getUserWithPName",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/api/v1/users?name=udin",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "udin"
+												},
+												{
+													"key": "email",
+													"value": "udin@tes.com",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "getAllUser",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/api/v1/users",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "udin@tes.com",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "getUser-perPage",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/api/v1/users?perPage=1",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "udin@tes.com",
+													"disabled": true
+												},
+												{
+													"key": "perPage",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "getUser-Page",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/api/v1/users?page=1",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "udin@tes.com",
+													"disabled": true
+												},
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "page & perpage",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/api/v1/users?page=1&perPage=1",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"users"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												},
+												{
+													"key": "email",
+													"value": "udin@tes.com",
+													"disabled": true
+												},
+												{
+													"key": "perPage",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "getUserByPk",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/v1/users/:userId",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "getUserByPk",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/users/:id",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "7"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"jon Update\",\r\n    \"email\": \"joni@tes.com\",\r\n    \"password\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/v1/users/:userId",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/v1/users/:userId",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CRUD Account",
+					"item": [
+						{
+							"name": "addAccount",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": 9,\r\n    \"bank_name\": \"BCA\",\r\n    \"bank_account_number\": 317239,\r\n    \"balance\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{localhost}}/api/v1/accounts"
+							},
+							"response": []
+						},
+						{
+							"name": "getAccount",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{localhost}}/api/v1/accounts"
+							},
+							"response": [
+								{
+									"name": "getAccount-perPage",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/api/v1/accounts?perPage=1",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											],
+											"query": [
+												{
+													"key": "perPage",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "getAllAccount",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/v1/accounts/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAccount",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    // \"userId\": 7,\r\n    // \"bank_name\": \"BCA\",\r\n    // \"bank_account_number\": 3172391,\r\n    \"balance\": 190000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/v1/accounts/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAccount",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/v1/accounts/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CRUD Transaction",
+					"item": [
+						{
+							"name": "addTransaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"source_account_id\" : 5,\r\n    \"destination_account_id\" : 8,\r\n    \"amount\": 1123,\r\n    \"type\": \"Transfer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{localhost}}/api/v1/transactions"
+							},
+							"response": []
+						},
+						{
+							"name": "addDeposit",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"source_account_id\": 9,\r\n    \"destination_account_id\" : 9,\r\n    \"amount\": 11231,\r\n    \"type\": \"Deposit\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{localhost}}/api/v1/transactions/deposit"
+							},
+							"response": []
+						},
+						{
+							"name": "addWithdraw",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"source_account_id\": 9,\r\n    \"destination_account_id\" : 9,\r\n    \"amount\": 167900,\r\n    \"type\": \"Withdraw\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{localhost}}/api/v1/transactions/withdraw"
+							},
+							"response": []
+						},
+						{
+							"name": "getTransaction",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/v1/transactions?page=2",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "getAccount-perPage",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{localhost}}/api/v1/accounts?perPage=1",
+											"host": [
+												"{{localhost}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											],
+											"query": [
+												{
+													"key": "perPage",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "getAllTransaction",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/v1/transactions/:id",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "24"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
